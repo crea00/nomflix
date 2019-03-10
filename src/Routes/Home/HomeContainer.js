@@ -24,19 +24,15 @@ export default class extends React.Component {
       });
 
     } catch (error) {
-      this.setState({
-        error: "Can't find movies information."
-      })
+      this.setState({ error: "Can't find movie information." });
     } finally {
-      this.setState({
-        loading: false,
-      });
+      this.setState({ loading: false });
     }
   }
 
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
-    console.log(this.state)
+
     return (
       <HomePresenter
         nowPlaying={nowPlaying}
