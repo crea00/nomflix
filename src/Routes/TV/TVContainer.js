@@ -23,7 +23,7 @@ export default class extends React.Component {
         airingToday
       });
       
-    } catch (error) {
+    } catch {
       this.setState({ error: "Can't find TV information." });
     } finally {
       this.setState({ loading: false });

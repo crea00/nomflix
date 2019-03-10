@@ -23,7 +23,7 @@ export default class extends React.Component {
         popular
       });
 
-    } catch (error) {
+    } catch {
       this.setState({ error: "Can't find movie information." });
     } finally {
       this.setState({ loading: false });
