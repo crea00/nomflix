@@ -23,17 +23,14 @@ export default class extends React.Component {
       },
       history: { push }
     } = this.props;
-    console.log(id)
     const { isMovie } = this.state;
     const parsedId = parseInt(id);
 
-    // if(isNaN(parsedId)) {
-		// 	console.log('TCL: extends -> componentDidMount -> isNaN(parsedId)', isNaN(parsedId))
-    //   return push('/');
-    // }
+    if(isNaN(parsedId)) {
+      return push('/');
+    }
 
     let result = null;
-    console.log('TCL: extends -> componentDidMount -> parsedId', parsedId)
     try {
       if(isMovie) {
         const request = await moviesApi.movieDetail(parsedId);
